@@ -21,3 +21,4 @@ console.log(conta2);
 
 console.log(cliente1);
 console.log(cliente2);
+console.log("Número de contas:", ContaCorrente.numeroDeContas);
