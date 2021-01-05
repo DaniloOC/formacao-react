@@ -3,6 +3,7 @@ const informacoesClientes = [];
 const removeCliente = id => {
     if(confirm("Deseja excluir o cliente?")) {
         deletaCliente(id);
+        document.location.reload();
     }
 };
 
