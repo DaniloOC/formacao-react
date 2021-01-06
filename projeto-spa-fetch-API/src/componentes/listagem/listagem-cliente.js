@@ -1,3 +1,5 @@
+import { deletaCliente, listarClientes } from '../../api/cliente'
+
 const informacoesClientes = [];
 
 const removeCliente = id => {
