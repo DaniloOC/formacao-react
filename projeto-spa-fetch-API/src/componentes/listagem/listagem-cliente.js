@@ -1,4 +1,5 @@
 import { deletaCliente, listarClientes } from '../../api/cliente'
+import "../../assets/css/clientes.css"
 
 const informacoesClientes = [];
 
