@@ -1,11 +1,23 @@
 import { deletaCliente, listarClientes } from '../../api/cliente';
 import '../../assets/css/clientes.css';
 
-const removeCliente = id => {
+const removeCliente = (id) => {
   if (confirm('Deseja excluir o cliente?')) {
     deletaCliente(id);
     document.location.reload();
   }
+};
+
+const criarBotaoExcluir = (id) => {
+  const botao = document.createElement('button');
+  botao.classList.add('btn', 'btn-danger');
+  botao.innerHTML = 'Excluir';
+
+  botao.addEventListener('click', () => {
+    removeCliente(id);
+  });
+
+  return botao;
 };
 
 const criaCorpoTabela = (tabela) => {
@@ -17,12 +29,11 @@ const criaCorpoTabela = (tabela) => {
     const conteudoLinha = `    
         <td>${cpf}</td>
         <td>${nome}</td>
-        <button type="button" class="btn btn-danger" onclick="removeCliente(${id})">Excluir</button>
-        <a href="componentes/edita/edita-clientes.html?id=${id}"><button type="button" class="btn btn-info">Editar</button></a>
+        <button type="button" class="btn btn-info" onclick="navegacao('/edita?id=${id}'); return false;">Editar</button>
     `;
 
     linha.innerHTML = conteudoLinha;
-
+    linha.appendChild(criarBotaoExcluir(id));
     return linha;
   };
 
