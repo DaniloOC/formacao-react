@@ -19,7 +19,7 @@ const eventoForm = (form) => {
 
     const conteudoLinha = `
             <div class="alert alert-success" role="alert">${mensagem}</div>
-        `
+        `;
 
     linha.innerHTML = conteudoLinha;
     return linha;
@@ -30,26 +30,26 @@ const eventoForm = (form) => {
 
     const conteudoLinha = `
             <div class="alert alert-warning" role="alert">${mensagem}</div>
-        `
+        `;
 
     linha.innerHTML = conteudoLinha;
     return linha;
   };
 
-  form.addEventListener('submit', event => {
+  form.addEventListener('submit', (event) => {
     event.preventDefault();
 
     if (!validaCPF(inputCPF.value)) {
-      alert("Esse CPF não é valido");
+      alert('Esse CPF não é valido');
       return;
     }
 
     editaCliente(id, inputCPF.value, inputNome.value)
       .then(() => {
-        form.appendChild(mensagemSucesso("Cliente editado com Sucesso."));
+        form.appendChild(mensagemSucesso('Cliente editado com Sucesso.'));
       })
       .catch(() => {
-        form.appendChild(mensagemErro("Erro na edição do cliente."));
+        form.appendChild(mensagemErro('Erro na edição do cliente.'));
       });
   });
 };
