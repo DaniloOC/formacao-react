@@ -1,6 +1,6 @@
-import eventoEnvia from "./cadastro-clientes"
+import eventoEnvia from './cadastro-clientes';
 
-const form = document.createElement('form')
+const form = document.createElement('form');
 
 const cadastro = `
   <div class="container">
@@ -14,7 +14,7 @@ const cadastro = `
     </div>
     <button type="submit" class="btn btn-primary">Enviar</button>
   </div>
-`
+`;
 
 form.innerHTML = cadastro;
 
@@ -25,3 +25,5 @@ const inicializaCadastro = () => {
   container.appendChild(form);
   return form;
 };
+
+export default inicializaCadastro;

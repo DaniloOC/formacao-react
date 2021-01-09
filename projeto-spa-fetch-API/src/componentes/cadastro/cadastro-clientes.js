@@ -1,16 +1,14 @@
-import { cadastrarClientes } from '../../api/cliente'
+import { cadastrarClientes } from '../../api/cliente';
 
 const eventoEnvia = (form) => {
-    const formCadastroCliente = document.querySelector('[data-form]');
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
 
-    formCadastroCliente.addEventListener("submit", event => {
-        event.preventDefault();
+    const nome = event.target.querySelector('[data-nome]');
+    const cpf = event.target.querySelector('[data-cpf]');
 
-        const nome = event.target.querySelector('[data-nome]');
-        const cpf = event.target.querySelector('[data-cpf]');
-
-        cadastrarClientes(nome.value, cpf.value);
-    });
+    cadastrarClientes(nome.value, cpf.value);
+  });
 };
 
 export default eventoEnvia;

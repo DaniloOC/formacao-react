@@ -25,7 +25,7 @@
     "express": "^4.17.0",
     "express-validator": "^5.3.1",
     "morgan": "^1.9.1",
-    "nodemon": "^1.19.0",
+    "nodemon": "^2.0.7",
     "sql-template-strings": "^2.2.2",
     "sqlite": "^3.0.3"
   }
