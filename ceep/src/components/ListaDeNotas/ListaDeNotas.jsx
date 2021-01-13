@@ -14,7 +14,8 @@ class ListaDeNotas extends Component {
                apagarNota={this.props.apagarNota}
                indice={index}
                titulo={nota.titulo}
-               texto={nota.texto}/>
+               texto={nota.texto}
+               categoria={nota.categoria}/>
             </li>
           )
         })}
