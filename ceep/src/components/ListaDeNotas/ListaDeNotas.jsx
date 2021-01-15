@@ -6,13 +6,18 @@ import './estilo.css'
 class ListaDeNotas extends Component {
   constructor () {
     super()
-    this.state = {
-      notas: []
-    }
+    this.state = { notas: [] }
+    this._novasNotas = this._novasNotas.bind(this)
   }
 
   componentDidMount () {
-    this.props.notas.inscrever(this._novasNotas.bind(this))
+    this._isMounted = true
+    this.props.notas.inscrever(this._novasNotas)
+  }
+
+  componentWillUnmount () {
+    this._isMounted = false
+    this.props.notas.desinscrever(this._novasNotas)
   }
 
   _novasNotas (notas) {
