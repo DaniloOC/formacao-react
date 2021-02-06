@@ -14,7 +14,7 @@ function App() {
 }
 
 function aoEnviarForm(dados) {
-  console.log(dados);
+  console.log('aoEnviarForm', dados);
 }
 
 function validarCPF(cpf) {
